@@ -1,10 +1,15 @@
 import React from 'react';
-import {getFCP} from "web-vitals";
+import Header from "../header/Header";
+import {Outlet} from "react-router-dom";
+import Footer from "../footer/Footer";
+import styles from "./Layout.module.scss";
 
 const Layout = () => {
     return (
-        <div>
-            Layout
+        <div className={styles.layout}>
+            <Header/>
+            <Outlet/>
+            <Footer/>
         </div>
     );
 };

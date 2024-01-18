@@ -1,5 +1,4 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import './App.css';
 import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import DetailPage from "./pages/DetailPage";
@@ -9,7 +8,6 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
-
     return (
       <BrowserRouter>
         <Routes>
