@@ -8,14 +8,13 @@ interface IData {
 export const loginFetcher = async (data: IData) => {
     try {
         return await axios.post(
-            `http://localhost:8080/api/auth/login`,
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/auth/login`,
             data,
             {
                 withCredentials: true,
             },
         );
     } catch (error) {
-        // return error.response.data.message;
-        console.log(error)
+        return error.response.data.message;
     }
 };
