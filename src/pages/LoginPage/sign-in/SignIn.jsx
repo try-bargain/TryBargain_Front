@@ -23,7 +23,7 @@ function SignIn () {
         const response = await loginFetcher({ userId, password });
 
         if (response?.status === 200) {
-            toast("로그인 성공🐟");
+            toast.success("로그인 성공🐟");
             navigate('/');
         } else {
             toast.error("로그인 실패🔥");
