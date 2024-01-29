@@ -3,8 +3,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import { FiLogIn, FiUser } from 'react-icons/fi';
 import styles from './Nav.module.scss';
 import {GrLogout} from "react-icons/gr";
-import {useAuth} from "../../../hooks/useAuth";
-import cookie from "react-cookies";
+import {eraseCookie, getCookie} from "../../../store/cookie";
 
 const Nav = () => {
     const [isAuth, setIsAuth] = useState(false);
@@ -12,24 +11,22 @@ const Nav = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        setAccesstoken(cookie.load("Authorization"));
+        setAccesstoken(getCookie("Authorization"));
         setIsAuth(!!accesstoken);
     }, [accesstoken]);
 
     const handleSignOut = () => {
-        cookie.remove("Authorization");
+        eraseCookie("Authorization");
         setIsAuth(false);
         navigate('/');
     }
-
-    console.log(isAuth);
 
     return (
         <nav className={styles.nav}>
             <ul>
                 <li>
                     <div className={styles.counter}>
-                        <Link to={"/myinfo"}>
+                        <Link to={"/chat"}>
                             {" "}
                             <FiUser title="내정보" />
                         </Link>
