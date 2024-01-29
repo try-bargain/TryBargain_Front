@@ -1,0 +1,83 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 80%;
+    height: auto;
+    padding: 10px 15px;
+    color: var(--second-color);
+    font-size: 16px;
+    border: 1px solid var(--second-color);
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+      border: 3px solid var(--second-color);
+      border-radius: 5px;
+    }
+  }
+
+  textarea {
+    width: 80%;
+    height: auto;
+    padding: 10px 15px;
+    color: var(--second-color);
+    font-size: 16px;
+    border: 1px solid var(--second-color);
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+      border: 3px solid var(--second-color);
+      border-radius: 5px;
+    }
+  }
+
+  button {
+    width: 80%;
+    margin-top: 10px;
+    padding: 15px 40px;
+    color: #fff;
+    font-size: 14px;
+    background: var(--main-color);
+    border: 1px solid var(--main-color);
+    cursor: pointer;
+    transition: 0.3s all ease;
+
+    &:hover {
+      background: var(--second-color);
+    }
+  }
+}
+
+.card_list {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  li {
+    border-radius: 4px;
+  }
+
+  @media (min-width: 667px) {
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 785px) {
+    justify-content: flex-start;
+  }
+}
